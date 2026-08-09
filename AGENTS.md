@@ -21,6 +21,14 @@ here, exactly as it is in zocam.
 
 ## First questions
 
+<!-- agent: claude — note added 2026-08-09. --> A direction exists now, and
+the questions below stay open inside it. The platform sketch of 2026-08-09
+puts this library under two consumers: the procedures application (its main
+consumer, an Ash application) and possibly s7r itself. On the sketch's own
+question — should this library completely facade the graph library — the
+answer recorded in the plan is **no**: wrap only what has process meaning,
+and let a caller with a genuinely graph-shaped question drop one level.
+
 Nothing here is decided. Ask me about each of these before you start:
 
 1. **How much of this already exists in s7r?** `S7r.Activity`, `S7r.Task`, and
@@ -36,9 +44,16 @@ Nothing here is decided. Ask me about each of these before you start:
 
 ## Because it is public
 
-- The library is released to Hex, and its reference goes to hexdocs.pm. A
-  release is a tag `vX.Y.Z` that equals the `version` in `mix.exs`, and GitHub
-  Actions does the publishing. Do not publish from a local console.
+- The library is released to Hex, and its reference goes to hexdocs.pm.
+  <!-- agent: claude — rewritten 2026-08-09: a release is a GitHub Release, not a bare tag. A paired rule. --> A
+  release is a **GitHub Release**, drafted in the browser: create the tag
+  `vX.Y.Z` there (it must equal the `version` in `mix.exs`), write the
+  notes, publish. The workflow behind the button checks the tag, runs the
+  tests, and publishes. Do not publish from a local console.
+- <!-- agent: claude — added 2026-08-09; the Registries paired rule. --> The
+  platform's registry rule: public Elixir → Hex.pm, JS → npmjs.com,
+  containers → ghcr.io. Private Elixir crosses as a GitHub git dependency
+  pinned to a release tag, because GitHub Packages has no Hex support.
 - Write every docstring example as a doctest (`iex>` lines), so the test suite
   proves that each example stays true.
 - Publication does not create users. The "No users" rule still holds: make the
