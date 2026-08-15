@@ -52,6 +52,6 @@ more general thing that s7r comes to depend on. That decision is not made.
 | Repository | What it holds |
 | --- | --- |
 | [hicha-aggregate](https://github.com/yuri4n/hicha-aggregate) | The centre: reads every source, answers combined questions |
-| [hicha-graph](https://github.com/yuri4n/hicha-graph) | Resources, topics, roadmaps |
+| [cubun](https://github.com/yuri4n/cubun) | Resources, topics, roadmaps |
 | [s7r](https://github.com/yuri4n/s7r) | The scheduler: activities, goals, the planner |
 | [zocam](https://github.com/yuri4n/zocam) | The time library s7r stands on |
